@@ -1,0 +1,10 @@
+---
+- name: this play book install the tree packages
+  hosts: webservers-rhel
+  become: true
+  tasks:
+  - name: install the tree packages
+    yum:
+      name: tree
+      state: installed
+

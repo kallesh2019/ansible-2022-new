@@ -1,0 +1,6 @@
+---
+- name: creating user in all nodes
+  hosts: all
+  become: true
+  tasks:
+  - user: name=sachin  

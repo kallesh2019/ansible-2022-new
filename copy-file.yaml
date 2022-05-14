@@ -1,0 +1,11 @@
+---
+- name: this play book copy the file to detination server
+  hosts: all
+  become: true
+  tasks:
+  - name: copy a file
+    copy:
+      src: /opt/ansible/democopying1005.txt
+      dest: /home/ansibleadmin/
+      mode: 0655
+

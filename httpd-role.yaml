@@ -1,0 +1,6 @@
+---
+- name: this playbook install httpd via ansible role 
+  hosts: all
+  become: true
+  roles:
+    - setup-httpd  

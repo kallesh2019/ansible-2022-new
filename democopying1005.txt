@@ -1,0 +1,1 @@
+hi this is my copy file from ansible node to all the servers

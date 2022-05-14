@@ -1,0 +1,9 @@
+---
+- name: this play book install the git packages
+  hosts: webservers-rhel
+  become: true
+  tasks:
+  - name: install the git packages
+    yum:
+      name: ['git', 'wget', 'vim', 'tree', 'telnet', 'gzip']
+      state: installed

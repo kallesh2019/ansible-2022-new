@@ -1,0 +1,9 @@
+---
+- name: this play book create a file/directory
+  hosts: all
+    #become: true
+  tasks:
+  - name: to creat file under /home/ansibleadmin/ansibletestfile
+    file:
+      path: /home/ansibleadmin/demodirectory1005
+      state: directory

@@ -1,0 +1,16 @@
+---
+- name: this play book notify  the httpd packages installed and  and then start the service
+  hosts: webservers-rhel
+  become: true
+  tasks:
+  - name: install the httpd packages
+    yum:
+      name: httpd
+      state: installed
+    notify: start the httpd service
+  handlers:      
+  - name: start the httpd service
+    service:
+      name: httpd
+      state: restarted
+

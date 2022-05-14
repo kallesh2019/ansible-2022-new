@@ -1,0 +1,9 @@
+---
+- name: creating user in all nodes
+  hosts: all
+  become: true
+  vars_files:
+    - user-details.yaml  
+  tasks:
+  - user: 
+      name: "{{ user }}" 

@@ -1,0 +1,26 @@
+---
+- name: this play book stop the services and uninstall the httpd and apache2  packages
+  hosts: all
+  become: true
+  tasks:
+  - name: stop the httpd services
+    service:
+      name: httpd
+      state: stopped
+    when: ansible_os_family == "RedHat"    
+  - name: uninstall the httpd packages
+    yum:
+      name: httpd
+      state: removed
+    when: ansible_os_family == "RedHat"
+  - name: stop the apache2 services
+    service:
+      name: apache2
+      state: stopped
+    when: ansible_os_family == "Debian"
+  - name: uninstall the httpd packages
+    apt:
+      name: apache2
+      state: absent
+    when: ansible_os_family == "Debian"
+

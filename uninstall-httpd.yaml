@@ -1,0 +1,13 @@
+---
+- name: this play book stop the services and uninstall the httpd packages
+  hosts: webservers-rhel
+  become: true
+  tasks:
+  - name: stop the httpd services
+    service:
+      name: httpd
+      state: stopped   
+  - name: uninstall the httpd packages
+    yum:
+      name: httpd
+      state: removed     

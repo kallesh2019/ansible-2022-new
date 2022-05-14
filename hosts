@@ -1,0 +1,9 @@
+[webservers-rhel]
+172.31.14.212
+172.31.41.105
+
+[appservers-ami]
+172.31.41.105
+
+[databaseservers-ubuntu]
+172.31.47.235
